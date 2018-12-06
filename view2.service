@@ -1,0 +1,16 @@
+[Unit]
+Description=Take photos & Post to the monitor
+After=rc-local.service
+
+[Service]
+WorkingDirectory=/home/pi/view2
+ExecStart=/usr/bin/sudo /usr/bin/python -m pondslider --interval 5
+Restart=always
+#RestartSec=90
+RestartSec=30
+Type=simple
+PIDFile=/var/run/view2.pid
+
+[Install]
+WantedBy=multi-user.target
+

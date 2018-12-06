@@ -1,0 +1,13 @@
+[Unit]
+Description=Take photos & Post to the monitor
+After=rc-local.service
+[Service]
+ExecStart=/home/pi/view2/hdc2.sh
+Restart=always
+#RestartSec=90
+RestartSec=30
+Type=simple
+PIDFile=/var/run/hdc.pid
+[Install]
+WantedBy=multi-user.target
+
