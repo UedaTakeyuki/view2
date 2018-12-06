@@ -202,8 +202,4 @@ Unit view.service could not be found.
 Any questions, suggestions, reports are welcome! Please make [issue](https://github.com/UedaTakeyuki/view/issues) without hesitation! 
 
 ## 11. history
-- 1.0.0  2018.08.07  first version self-forked from [read.py](https://github.com/UedaTakeyuki/slider/blob/master/read.py).
-- 1.1.1  2018.08.23  Stable version
-- 1.2.0  2018.09.18  Add hdc (human detection camera)
-- 1.3.0  2018.11.14  Add -test and -keep option to view.sh, --status option to autstart.sh
-- 1.3.1  2018.11.25  fix: view.sh is called at 30 sec interval ignoring timer.
+- 0.1.0  2018.12.06  first version self-forked from [view](https://github.com/UedaTakeyuki/view).
