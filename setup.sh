@@ -1,3 +1,4 @@
+sudo pip install requests pondslider
 sudo apt-get install fswebcam
 #sudo apt-get install curl
 git clone https://github.com/UedaTakeyuki/handlers.git
