@@ -25,7 +25,8 @@ usage_exit(){
 
 on(){
 	sed -i "s@^WorkingDirectory=.*@WorkingDirectory=${SCRIPT_DIR}@" ${CMD}.service
-	sudo ln -s ${SCRIPT_DIR}\/${CMD}.service /etc/systemd/system/${CMD}.service
+#	sudo ln -s ${SCRIPT_DIR}\/${CMD}.service /etc/systemd/system/${CMD}.service
+	sudo cp ${SCRIPT_DIR}\/${CMD}.service /etc/systemd/system/${CMD}.service
 	sudo systemctl daemon-reload
 	sudo systemctl enable ${CMD}.service
 	sudo systemctl start ${CMD}.service
