@@ -16,7 +16,7 @@ download from [release](https://github.com/UedaTakeyuki/view/releases)
 or 
 
 ```
-git clone https://github.com/UedaTakeyuki/view.git
+git clone https://github.com/UedaTakeyuki/view2.git
 ```
 
 ## 2. 2etup
