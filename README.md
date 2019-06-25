@@ -49,28 +49,21 @@ Let's say your view_id is axwdjqwy as above picture, set it by setid.sh as
 After view_id setting is finished, you can take & send photo by following command.
 
 ```
-./view.sh
+python -m pondslider
 ```
 
-You may see following sequence of log
-In case everything succeeded, expected response is consist of the log of taking photo, sending it, and {"ok":true} as follows:
+You may see following sequence of log.
 
 ```
---- Opening /dev/video0...
-Trying source module v4l2...
-/dev/video0 opened.
-No input was specified, using the first.
-Delaying 1 seconds.
---- Capturing frame...
-Skipping 20 frames...
-Capturing 1 frames...
-Captured 21 frames in 0.67 seconds. (31 fps)
---- Processing captured image...
-Writing JPEG image to '/tmp/20180823190339.jpg'.
-{"ok":true}
+{'photo': '/tmp/20190625210920.jpg'}
+start handle
+end handle
+call value handler
+start terminate
+end terminate
 ```
 
-At the last line, ***{"ok":true}*** indicate that take & send photo are successfully finished. By Web Browser, you can see the MONITOR™ display is updated by your taken & sent photo.
+By Web Browser, you can see the MONITOR™ display is updated by your taken & sent photo.
 
 <img src="https://monitor.uedasoft.com/docs/UserGuide/pics/2018-09-03.16.32.22.png" width="28%">
 
