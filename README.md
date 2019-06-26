@@ -49,57 +49,24 @@ Let's say your view_id is axwdjqwy as above picture, set it by setid.sh as
 After view_id setting is finished, you can take & send photo by following command.
 
 ```
-./view.sh
+python -m pondslider
 ```
 
-You may see following sequence of log
-In case everything succeeded, expected response is consist of the log of taking photo, sending it, and {"ok":true} as follows:
+You may see following sequence of log.
 
 ```
---- Opening /dev/video0...
-Trying source module v4l2...
-/dev/video0 opened.
-No input was specified, using the first.
-Delaying 1 seconds.
---- Capturing frame...
-Skipping 20 frames...
-Capturing 1 frames...
-Captured 21 frames in 0.67 seconds. (31 fps)
---- Processing captured image...
-Writing JPEG image to '/tmp/20180823190339.jpg'.
-{"ok":true}
+{'photo': '/tmp/20190625210920.jpg'}
+start handle
+end handle
+call value handler
+start terminate
+end terminate
 ```
 
-At the last line, ***{"ok":true}*** indicate that take & send photo are successfully finished. By Web Browser, you can see the MONITOR™ display is updated by your taken & sent photo.
+By Web Browser, you can see the MONITOR™ display is updated by your taken & sent photo.
 
 <img src="https://monitor.uedasoft.com/docs/UserGuide/pics/2018-09-03.16.32.22.png" width="28%">
 
-In case something wrong, response finished with {"ok":false,"reason":"XXX"}. For Example:
-
-```
-{"ok":false,"reason":"ViewID not valid"}
-```
-
-In this case, you should make sure if correct view_is was set by setid.sh command.
-
-### Debug
-
-In case your MONITOR™ display is NOT updated, try view.sh command with test option
-
-```bash:
-./view.sh test
-```
-
-With test option, view.sh doesn't use WebCam. Instead, view.sh send a Rainbow test bars. In case Rainbow bars are shown on your MONITOR™ display, at least network connection between your device and MONITOR™ server is working well. In case still NOT update, please confirm network connection on your device.
-
-Then, try view.sh command again with keep option
-
-```bash:
-./view.sh keep
-```
-
-With keep option, view.sh doesn't remove a photo even after send and keep it on the folder "/tmp" with the filename consist of date & time like as ***/tmp/20181114201302.jpg***.
-So, please check this .jpg file. If this file seems to be broken, also confirm your WebCam device is working well or not.
 
 ## 7. setting for automatically run view.sh at 5 minute interval
 
@@ -124,25 +91,27 @@ You can confirm current status with --status option:
 You may see following sequence:
 
 ```
-pi@raspberrypi:~/view-v_1.1.1 $ sudo systemctl status view.service 
-● view.service - Take photos & Post to the monitor
-   Loaded: loaded (/home/pi/view/view.service; enabled; vendor preset: enabled)
-   Active: activating (auto-restart) since Wed 2018-11-14 20:42:26 JST; 5s ago
-  Process: 7057 ExecStart=/home/pi/view/view.sh (code=exited, status=0/SUCCESS)
- Main PID: 7057 (code=exited, status=0/SUCCESS)
-● view.timer - Take photos & Post to the monitor
-   Loaded: loaded (/home/pi/view/view.timer; enabled; vendor preset: enabled)
-   Active: active (waiting) since Wed 2018-11-14 18:38:51 JST; 2h 3min ago
+./autostart.sh --status
+● view2.service - Take photos & Post to the monitor
+   Loaded: loaded (/home/pi/SCRIPT/view2/view2.service; enabled; vendor preset: enabled)
+   Active: active (running) since Tue 2019-06-25 21:13:00 JST; 8s ago
+ Main PID: 830 (sudo)
+   CGroup: /system.slice/view2.service
+           ├─830 /usr/bin/sudo /usr/bin/python -m pondslider --interval 5
+           ├─837 /usr/bin/python -m pondslider --interval 5
+           ├─838 /bin/sh -c fswebcam /tmp/20190625211306.jpg -d /dev/video0 -D 1 -S 20 -r 320x240
+           └─839 fswebcam /tmp/20190625211306.jpg -d /dev/video0 -D 1 -S 20 -r 320x240
 
-Nov 14 18:38:51 raspberrypi systemd[1]: Started Take photos & Post to the monito
+Jun 25 21:13:00 raspberrypi systemd[1]: Started Take photos & Post to the monitor.
+Jun 25 21:13:00 raspberrypi sudo[830]:     root : TTY=unknown ; PWD=/home/pi/SCRIPT/view2 ; USER=root ; COMMAND=/usr/bin/pytho
+Jun 25 21:13:00 raspberrypi sudo[830]: pam_unix(sudo:session): session opened for user root by (uid=0)
 ```
 
 In case waiting key input, type "q" key.
 
 In case afte service set as off, you can see followings:
 ```
-Unit view.service could not be found.
-Unit view.timer could not be found.
+Unit view2.service could not be found.
 ```
 
 ## 8. setting for automatically run view.sh with outside event by GPIO, like PIR(Passive Infra-Red) Human detection Sensor.
