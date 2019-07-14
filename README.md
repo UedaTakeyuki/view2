@@ -23,6 +23,7 @@ git clone https://github.com/UedaTakeyuki/view2.git
 Install & setup prerequired modules by
 
 ```
+cd view2
 ./setup.sh 
 ```
 
