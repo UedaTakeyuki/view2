@@ -1,3 +1,4 @@
+sudo apt update
 sudo apt-get install fswebcam python-pip
 sudo pip install requests pondslider error_counter
 #sudo apt-get install curl
