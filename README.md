@@ -143,8 +143,9 @@ You may see the following sequence:
  Main PID: 7947 (code=exited, status=0/SUCCESS)
    CGroup: /system.slice/view.service
 ```
+In case waiting for key input, type "q" key.
 
-In case afte service set as off, you can see followings:
+In case of service set as off, you can see followings:
 ```
 pi@raspberrypi:~/view $ ./hdc_autostart.sh --status
 Unit view.service could not be found.
