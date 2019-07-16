@@ -81,7 +81,7 @@ You can set that view.sh is called repeatedly at 5 minute interval after device 
 ./autostart.sh --off
 ```
 
-Tecknically speaking, autostart.sh set timer service of systemctl for view.sh. Incase you are familiar with crontab, it's OK to set view.sh on the cron yourself instead of using autostart command.
+Technically speaking, autostart.sh set timer service of systemctl for view.sh. In case you are familiar with crontab, it's OK to set view.sh on the cron yourself instead of using autostart command.
 
 You can confirm current status with --status option:
 
