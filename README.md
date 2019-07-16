@@ -133,7 +133,7 @@ You can confirm current status with --status option:
 ./hdc_autostart.sh --status
 ```
 
-You may see following sequence:
+You may see the following sequence:
 
 ```
 ● view.service - Take photos & Post to the monitor
