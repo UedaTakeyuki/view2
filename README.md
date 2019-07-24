@@ -81,7 +81,7 @@ You can set that view.sh is called repeatedly at 5 minute interval after device 
 ./autostart.sh --off
 ```
 
-Tecknically speaking, autostart.sh set timer service of systemctl for view.sh. Incase you are familiar with crontab, it's OK to set view.sh on the cron yourself instead of using autostart command.
+Technically speaking, autostart.sh set timer service of systemctl for view.sh. In case you are familiar with crontab, it's OK to set view.sh on the cron yourself instead of using autostart command.
 
 You can confirm current status with --status option:
 
@@ -133,7 +133,7 @@ You can confirm current status with --status option:
 ./hdc_autostart.sh --status
 ```
 
-You may see following sequence:
+You may see the following sequence:
 
 ```
 ● view.service - Take photos & Post to the monitor
@@ -143,8 +143,9 @@ You may see following sequence:
  Main PID: 7947 (code=exited, status=0/SUCCESS)
    CGroup: /system.slice/view.service
 ```
+In case waiting for key input, type "q" key.
 
-In case afte service set as off, you can see followings:
+In case of service set as off, you can see followings:
 ```
 pi@raspberrypi:~/view $ ./hdc_autostart.sh --status
 Unit view.service could not be found.
