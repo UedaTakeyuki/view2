@@ -155,8 +155,31 @@ Unit view.service could not be found.
 - [Blog Post](https://monitorserviceatelierueda.blogspot.com/2018/09/how-to-make-human-detection-security.html).
 - [wiki](https://github.com/UedaTakeyuki/view/wiki/PIR-(Passive-Infrared-Ray)-Human-Detection-Sensor)
 
+## 9. Leave photo on the RPi.
+By default setting, view2 doesn't leave photo on the RPi. You can change this setting with uvc_photo.ini. To leave it, please delete first **#** of comment outed **data_path** settings as follow:
 
-## 9. Blog posts
+### don't leav
+```bash:
+[save]
+#data_path=/home/pi/DATA
+```
+
+### leave it on the /home/pi/DATA
+
+```bash:
+[save]
+data_path=/home/pi/DATA
+```
+The folder specified as **data_path** setting will be created automatically if not exist. You can leave it on other path with editting this path.
+
+To reflect configration change, restarting of view2 process is required.
+
+```bash
+./autostart --off
+./autostart --on
+```
+
+## 10. Blog posts
 
 #### for version 1.2.0 or later
 - [How to make Human Detection Security camera with under 1$ Human Detection Senser, 2$ USB Webam & Raspberry Pi](https://monitorserviceatelierueda.blogspot.com/2018/09/how-to-make-human-detection-security.html)
