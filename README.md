@@ -197,3 +197,4 @@ Any questions, suggestions, reports are welcome! Please make [issue](https://git
 
 ## 11. history
 - 0.1.0  2018.12.06  first version self-forked from [view](https://github.com/UedaTakeyuki/view).
+- 1.0.1  2022.03.24  Fix for support python 3.9 to run on BullsEye

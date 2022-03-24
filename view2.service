@@ -4,7 +4,7 @@ After=rc-local.service
 
 [Service]
 WorkingDirectory=/home/pi/view2
-ExecStart=/usr/bin/sudo /usr/bin/python -m pondslider --interval 5
+ExecStart=/usr/bin/sudo /usr/bin/python3 -m pondslider --interval 5
 Restart=always
 #RestartSec=90
 RestartSec=30
