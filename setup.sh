@@ -1,5 +1,6 @@
 sudo apt update
-sudo apt-get install fswebcam python3-pip
+sudo apt-get install fswebcam python-pip python3-pip
+sudo pip install requests pondslider error_counter
 sudo pip3 install requests pondslider error_counter
 #sudo apt-get install curl
 git clone https://github.com/UedaTakeyuki/handlers.git
