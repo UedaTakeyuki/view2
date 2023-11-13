@@ -50,7 +50,7 @@ Let's say your view_id is axwdjqwy as above picture, set it by setid.sh as
 After view_id setting is finished, you can take & send photo by following command.
 
 ```
-python -m pondslider
+python3 -m pondslider
 ```
 
 You may see following sequence of log.
@@ -197,4 +197,5 @@ Any questions, suggestions, reports are welcome! Please make [issue](https://git
 
 ## 11. history
 - 0.1.0  2018.12.06  first version self-forked from [view](https://github.com/UedaTakeyuki/view).
-- 1.0.1  2022.03.24  Fix for support python 3.9 to run on BullsEye
+- 1.0.1  2022.03.24  Fix for support python 3.9 to run on BullsEye.
+- 1.0.2  2023.11.13  Don't install python2-pip if OS version is BullsEye or later.
