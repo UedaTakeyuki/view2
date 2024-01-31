@@ -1,6 +1,7 @@
 sudo apt update
 sudo apt-get install fswebcam python3-pip
-sudo pip3 install requests pondslider error_counter --break-system-packages
+sudo pip3 install requests pondslider error_counter
+#sudo pip3 install requests pondslider error_counter --break-system-packages
 
 if [ ${cat /etc/debian_version} -lt 11 ] ; then
   sudo apt-get install python-pip
